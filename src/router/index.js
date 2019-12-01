@@ -2,13 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import emoStatus from '@/components/keeper/emoStatus'
-Vue.use(Router)
+import emoChart from '@/components/keeper/emoChart'
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/ppp',
+      path: '/login',
       name: 'HelloWorld',
       component: HelloWorld
     },
@@ -16,6 +17,11 @@ export default new Router({
       path: '/keeper/emoStatus',
       name: 'emoStatus',
       component: emoStatus
+    },
+    {
+      path: '/keeper/emoChart',
+      name: 'emoChart',
+      component: emoChart
     }
   ]
 })

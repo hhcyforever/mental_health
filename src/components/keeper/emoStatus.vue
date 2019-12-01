@@ -35,25 +35,24 @@
     },
     methods:{
       submit:function () {
-        var message_tmp = "";
-        var that = this;
+        let message_tmp = "";
         if(this.value_happiness <= 2){
           message_tmp = "You are not happy today";
         }
-        // this.$alert(this.input, 'test', {
-        //
-        // });
-        let params = {
-          input: that.input
-        };
-        console.log(params);
-        this.$http.post('/api/nlpProcess', params)
-          .then((response) => {
-
-          })
+        let that = this;
+        this.$socket.emit('emoText',{
+          txt: that.input
+        })
       },
-      }
 
+      },
+    mounted: function () {
+      this.sockets.subscribe('emoStatus',(data)=>{
+        console.log(data);
+        let emoStatus = "The emotion status is:"+ data.msg;
+        this.$message(emoStatus);
+      })
+    }
   }
 </script>
 

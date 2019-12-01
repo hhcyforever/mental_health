@@ -1,26 +1,34 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 const app = express();
+let http = require('http').Server(app);
+let io = require('socket.io')(http);
+let Sentiment = require('sentiment');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-router.post('/api/nlpProcess', function (req, res) {
-    var aa= req.body.content;
-    console.log(aa);
-    console.log("received");
-    res.json({
-
-    });
-  });
-
 // var Sentiment = require('sentiment');
 // var sentiment = new Sentiment();
 // var result = sentiment.analyze('I am glad');
 // console.log(result);
 
+io.on('connection',function(socket) {
+  socket.on('emoText', function (obj) {
+    console.log(obj.txt);
 
-app.listen(3000);
-console.log('success listen 3000');
+    let sentiment = new Sentiment();
+    let result = sentiment.analyze(obj.txt);
+    let score = result.score;
+    socket.emit('emoStatus',{
+      msg: score
+    });
+    console.log("message sent: ", result);
+  });
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
