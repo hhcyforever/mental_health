@@ -19,7 +19,7 @@ export default new Router({
       component: emoStatus
     },
     {
-      path: '/keeper/emoChart',
+      path: '/aaaa',
       name: 'emoChart',
       component: emoChart
     }
