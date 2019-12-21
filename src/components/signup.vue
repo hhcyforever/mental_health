@@ -58,6 +58,7 @@
         this.$socket.emit('sign_up', obj, (data)=> {
             if(data.code === 1){
               this.$toast("Welcome," + this.username + "!");
+              this.$store.commit('update', this.username);
               this.$router.push("/home");
             }
             else{

@@ -1,18 +1,23 @@
 <template>
   <div class="login">
-    <h2>Log In To</h2>
-    <h1>EmoKeeper</h1>
-    <div>
+    <div class="title">
+      <h2>Log In To</h2>
+      <h1>EmoKeeper</h1>
+    </div>
+    <div class="inputCell">
       <mt-field label="Username" placeholder="Enter your username" v-model="username" class="my-input"></mt-field>
       <mt-field label="Password" placeholder="Enter your password" type="password" v-model="password" class="my-input" ></mt-field>
+      <br />
+      <!--<br />-->
       <mt-button type="primary" size="large" @click="login">Log In</mt-button>
+
+      <h6>Don't have an account?</h6>
+      <router-link :to="{path: '/sign-up'}">
+        <mt-button>
+          Join EmoKeeper
+        </mt-button>
+      </router-link>
     </div>
-    <h6>Don't have an account?</h6>
-    <router-link :to="{path: '/sign-up'}">
-      <mt-button>
-        Join EmoKeeper
-      </mt-button>
-    </router-link>
   </div>
 </template>
 
@@ -45,6 +50,8 @@
           this.$socket.emit('login', obj, (data)=> {
             if(data.code === 1){
               this.$toast("Welcome back," + this.username + "!");
+              this.$store.commit('update', this.username);
+              // console.log(this.$store.state.user);
               this.$router.push("/home");
             }
             else{
@@ -62,11 +69,25 @@
   .login{
     width:100%;
     height:670px;
-    background-image:url('../assets/bg.jpg');
+    background-image:url('../assets/loginBackground.jpg');
     background-size:100%;
   }
 
   .my-input{
     margin-top:5px;
+  }
+
+  .title{
+    /*color: #ffffff;*/
+    position: relative;
+    right: 3px;
+    top: 80px;
+    /*right: 0;*/
+    text-align: right;
+  }
+
+  .inputCell{
+    position: relative;
+    top: 100px;
   }
 </style>

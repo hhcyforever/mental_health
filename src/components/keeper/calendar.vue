@@ -30,14 +30,10 @@
     },
     methods: {
       clickDay(data) {
-        console.log(this.arr);
-      },
-      clickToday(data) {
-        console.log("跳到了本月今天", data); //跳到了本月
-      },
-      changeDate(data) {
-        this.$toast("切换到的月份为" + data);
-        console.log("左右点击切换月份", data);
+        console.log(data);
+        let date = data.split(/\//);
+        console.log(date);
+        this.$router.push({name:'daily_report',params: {year: date[0], month: date[1], day: date[2]}})
       }
     },
     mounted() {
@@ -59,25 +55,6 @@
           });
         }
       });
-
-
-
-      // setTimeout(() => {
-      //   this.arr = [
-      //     {
-      //       date: format(new Date(), 3),
-      //       className: "mark1"
-      //     },
-      //     {
-      //       date: format(new Date(), 12),
-      //       className: "mark2"
-      //     }
-      //   ];
-      //   this.arr.push({
-      //     date: format(new Date(), 15),
-      //     className: "mark1"
-      //   });
-      // }, 300);
     }
   };
 </script>

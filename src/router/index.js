@@ -1,20 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import home from '@/components/home'
 import emoStatus from '@/components/keeper/emoStatus'
-import emoChart from '@/components/keeper/emoChart'
+import daily_report from '@/components/keeper/daily_report'
 import login from '@/components/login'
 import signUp from '@/components/signup'
 import calendar from '@/components/keeper/calendar'
+import emoInput from '@/components/keeper/emoInput'
+import weekly_report from '@/components/keeper/weekly_report'
 Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/home',
+      name: 'home',
+      component: home
     },
     {
       path: '/login',
@@ -27,19 +29,29 @@ export default new Router({
       component: signUp
     },
     {
-      path: '/home',
+      path: '/keeper_emoStatus',
       name: 'emoStatus',
       component: emoStatus
     },
     {
-      path: '/keeper/emoChart',
-      name: 'emoChart',
-      component: emoChart
+      path: '/keeper/emoInput',
+      name: 'emoInput',
+      component: emoInput
+    },
+    {
+      path: '/keeper/daily_report',
+      name: 'daily_report',
+      component: daily_report
     },
     {
       path:'/keeper/calendar',
       name:'calendar',
       component: calendar
+    },
+    {
+      path:'/keeper/weekly_report',
+      name:'weekly_report',
+      component: weekly_report
     }
   ]
 })

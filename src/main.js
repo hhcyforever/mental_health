@@ -10,17 +10,20 @@ import 'mint-ui/lib/style.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import Calendar from 'vue-calendar-component';
 import VueSocketIO from 'vue-socket.io'
+import Vuex from 'vuex'
+import store from './store'
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use(VCharts);
 Vue.use(MintUI);
 Vue.use(Calendar);
+Vue.use(Vuex);
 
 /* eslint-disable no-new */
 Vue.use(new VueSocketIO({
   debug: true,
-  // connection: 'http://10.187.131.178:3000',
+  // connection: 'http://192.168.1.103:3000',
   // local
   connection: 'http://127.0.0.1:3000',
   vuex: {
@@ -30,6 +33,7 @@ Vue.use(new VueSocketIO({
 
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
