@@ -5,6 +5,8 @@
       <h1>EmoKeeper</h1>
     </div>
     <div class="inputCell">
+      <br />
+      <br />
       <mt-field label="Username" placeholder="Enter your username" v-model="username" class="my-input"></mt-field>
       <mt-field label="Password" placeholder="Enter your password" type="password" v-model="password" class="my-input" ></mt-field>
       <br />

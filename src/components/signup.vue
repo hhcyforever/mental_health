@@ -1,14 +1,27 @@
 <template>
   <div class="sign-up">
-    <h2>Welcome!</h2>
-    <h1>Create account for EmoKeeper</h1>
+    <div class="title">
+      <br />
+      <h2>Create your account</h2>
+    </div>
     <div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <mt-field label="Username" placeholder="Enter your username" v-model="username" class="my-input"></mt-field>
       <mt-field label="Password" placeholder="Enter a password" type="password" v-model="password" class="my-input" ></mt-field>
       <mt-field label="Confirm" placeholder="Enter password again" type="password" v-model="password_new" class="my-input" ></mt-field>
-      <mt-button size="large" color="primary" @click="sign_up">Create your account</mt-button>
+      <br />
+      <mt-button type="primary" size="large" @click="sign_up">Create your account</mt-button>
     </div>
-    <h6>Have an account?</h6>
+    <h4>Have an account?</h4>
     <router-link :to="{path: '/login'}">
       <mt-button>
         Log In
@@ -33,7 +46,7 @@
         let p=this.password;
         let p2 = this.password_new;
 
-        let reg=/^[a-z0-9_]{3,12}$/i;
+        let reg=/^[a-z0-9_]{8,16}$/i;
         if(!reg.test(u)){
           this.$toast("Improper username format!");
           return;
@@ -75,8 +88,17 @@
   .sign-up{
     width:100%;
     height:670px;
-    background-image:url('../assets/bg.jpg');
+    background-image:url('../assets/loginBackground.jpg');
     background-size:100%;
+  }
+
+  .title{
+    /*color: #ffffff;*/
+    position: relative;
+    right: 3px;
+    top: 80px;
+    /*right: 0;*/
+    text-align: right;
   }
 
   .my-input{
