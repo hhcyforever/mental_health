@@ -27,10 +27,12 @@ let userRecord = new mongoose.Schema({
   value_depression: Number,
   value_excitement: Number,
   //detected value
-  textScore: String,
+  textScore: Number,
+  keyWords: String,
   imgScore: String,
   imgHappiness: Number,
-  imgSadness: Number
+  imgSadness: Number,
+  total_score: Number
 });
 
 mongoose.model('User', UserSchema);

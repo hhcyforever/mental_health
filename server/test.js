@@ -5,7 +5,7 @@ let emo = require('./faceEmo.js');
 let WeeklyEmo = require('./weeklyEmo.js').WeeklyEmo;
 let dateUtil = require('./utilsDate.js');
 var userRecord = mongoose.model('userRecord');
-userRecord.find({ year: 2019, month: 12, day: 20}, function (error, doc) {
+userRecord.find({}, function (error, doc) {
   if(error){
     console.log(error);
   }

@@ -69,10 +69,11 @@
 
 <style scoped>
   .login{
+    position: absolute;
     width:100%;
-    height:670px;
+    height:100%;
     background-image:url('../assets/loginBackground.jpg');
-    background-size:100%;
+    /*background-size:100%;*/
   }
 
   .my-input{

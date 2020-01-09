@@ -1,0 +1,35 @@
+{
+  "sentences": {
+    "rainy": "Artistic Rainy Day",
+    "sunny": "Ardent Sunny Day",
+    "snowy": "Dreamlike Snowy Day",
+    "cloudy": "Elegant Cloudy Day"
+  },
+  "poems": {
+    "rainy": ["When depressed in the rainy days, the breath of the pine needles in the mountain will help you find yourself"],
+    "sunny": ["When the first rays of sunlight fall upon the earth, the whole world is full of vitality"],
+    "snowy": ["Have you heard the sound of falling snow? No melody is more beautiful than it"],
+    "cloudy": ["Look at the swirling clouds in violet haze! Are they like flaming flowers that brightly blaze?"]
+  },
+  "meal_recommendations":[
+    "The number of meals you eat per day depends on your energy needs and schedule. For most individuals, it is best to eat at least 3 times per day.",
+    "It is well known that unhealthy eating patterns can cause mood swings. Blood sugar fluctuations and nutritional imbalances are often to blame. Without a steady source of fuel from the foods we eat, our mind and bodies don't function well.",
+    "Eating a healthy, balanced diet is an important part of maintaining good health, and can help you feel your best."
+  ],
+  "sleep_recommendations":[
+    "Increasing bright light exposure during the day and reducing blue light exposure in the evening would help you sleep better",
+    "Studies show people who are sleep deprived report increases in negative moods (anger, frustration, irritability, sadness) and decreases in positive moods. Leave enough time for sleep from now on!",
+    "Your body's circadian rhythm functions on a set loop, aligning itself with sunrise and sunset.Being consistent with your sleep and waking times can aid long-term sleep quality"
+  ],
+  "encourageWords":[
+    "Everyone has inside them a piece of good news. The good news is you don’t know how great you can be! How much you can love! What you can accomplish! And what your potential is.",
+    "Everything you need to accomplish your goals is already in you.",
+    "Sometimes the best thing you can do is not think, not wonder, not imagine, not obsess. Just breathe and have faith that everything will work out for the best.",
+    "Be gentle with yourself. You’re doing the best you can!"
+  ],
+  "comfortWords":[
+    "May my condolences bring you comfort and may my prayers ease the pain of this loss.",
+    "Today and always, may loving memories bring you peace, comfort, and strength.",
+    "May the sorrow you feel in your heart lighten by the love that surrounds you."
+  ]
+}

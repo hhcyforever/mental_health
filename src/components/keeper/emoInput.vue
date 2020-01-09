@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Emo Record</h1>
+    <!--<h1>Emo Record</h1>-->
     <div>
       {{dateString}}
     </div>
@@ -26,6 +26,7 @@
     export default {
       name: "emoInput",
       data(){
+
         return{
           emoInput: {
             // symptoms: null,
@@ -34,12 +35,13 @@
             imgData: null,
             img: null
           },
-          date: new Date()
+          // date: new Date(),
+          date: new Date(new Date()-24*60*60*1000)
         }
       },
       computed:{
         dateString: function () {
-          let date =  new Date();
+          let date =  this.date;
           return String(date.getFullYear())+"-"+String(date.getMonth()+1)+"-"+date.getDate();
         }
       },

@@ -12,6 +12,8 @@ import Calendar from 'vue-calendar-component';
 import VueSocketIO from 'vue-socket.io'
 import Vuex from 'vuex'
 import store from './store'
+import echarts from "echarts"
+
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
@@ -19,11 +21,12 @@ Vue.use(VCharts);
 Vue.use(MintUI);
 Vue.use(Calendar);
 Vue.use(Vuex);
+Vue.use(echarts);
 
 /* eslint-disable no-new */
 Vue.use(new VueSocketIO({
   debug: true,
-  // connection: 'http://192.168.1.103:3000',
+  // connection: 'http://10.188.222.154:3000',
   // local
   connection: 'http://127.0.0.1:3000',
   vuex: {
